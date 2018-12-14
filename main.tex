@@ -1,0 +1,193 @@
+\documentclass{article}
+
+% From last round: 
+
+% Marcus playing with page layout
+
+% Marcus, that's generally a bad idea. It's almost always wrong
+% to make the page too wide; there is a good reason why e.g. newspaper
+% articles are usually set in one narrow header and two even narrower
+% columns underneath. The reason is that the eye loses position
+% jumping back left to the beginning of the line if the right
+% edge is out of view.
+% We should first see how it comes out. 
+
+% Marty, the standard margins are too wide in the default article documentclass.  
+% The settings below create the standard 1-inch margins all around. Reinstating...
+
+% This round:
+
+%Marty, if you have a smoother way of achieving standard 1-inch margins in a letter-size document, please implement. For now, this is working
+
+\oddsidemargin=0in
+\evensidemargin=0in
+
+%\addtolength{\textwidth}{0.16\textwidth}
+\textwidth=6.5in % please leave this in place as is - thanks, Marcus
+\textheight=9in
+\topmargin=0in
+\headheight=0in
+\headsep=0in
+\footskip=0.5in
+
+%
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem,kantlipsum}
+\usepackage[style=numeric,sorting=none]{biblatex}
+
+%
+\input{header}
+
+\addbibresource{BNL.bib}
+\addbibresource{FIT.bib}
+\addbibresource{INFN.bib}  
+\addbibresource{SBU.bib}
+\addbibresource{UVa.bib}
+\addbibresource{Yale.bib}
+\addbibresource{TU.bib}
+
+\begin{document}
+%
+%\input{eRD6_consortium}
+\input{eRD6_New_consortium}
+\newpage
+\tableofcontents
+
+\renewcommand{\baselinestretch}{1.02}
+\newpage
+%
+\section{Past}
+\subsection{Brief overview of project histories}
+\input{00_BNL_overview}
+\input{00_FIT_overview}
+\input{00_INFN_overview}
+\input{00_SBU_overview}
+\input{00_TU_overview}
+\input{00_UVa_overview}
+\input{00_Yale_overview}
+
+\subsection{What was planned for this period?} 
+\input{01_BNL_wasPlanned}
+\input{01_FIT_wasPlanned}
+\input{01_INFN_wasPlanned}
+\input{01_SBU_wasPlanned}
+\input{01_TU_wasPlanned}
+\input{01_UVa_wasPlanned}
+\input{01_Yale_wasPlanned}
+%
+\subsection{What was achieved?} 
+\input{02_BNL_wasAchieved}
+\input{02_FIT_wasAchieved}
+%\input{02_INFN_wasAchieved}
+\input{02_SBU_wasAchieved}
+\input{02_TU_wasAchieved}
+\input{02_UVa_wasAchieved}
+\input{02_Yale_wasAchieved}
+%
+\subsection{What was not achieved, why not and what will be done to correct?} 
+\input{03_BNL_wasNotAchieved}
+\input{03_FIT_wasNotAchieved}
+\input{03_INFN_wasNotAchieved}
+\input{03_SBU_wasNotAchieved}
+\input{03_TU_wasNotAchieved}
+\input{03_UVa_wasNotAchieved}
+\input{03_Yale_wasNotAchieved}
+
+\section{Future}
+\subsection[What is planned for the next funding cycle and beyond?]{What is planned for the next funding cycle and beyond? How, if at all, is this planning different from the original plan?}
+\input{04_BNL_isPlannedNext}
+\input{04_FIT_isPlannedNext}
+\input{04_INFN_isPlannedNext}
+\input{04_SBU_isPlannedNext}
+\input{04_TU_isPlannedNext}
+\input{04_UVa_isPlannedNext}
+\input{04_Yale_isPlannedNext}
+
+\subsection{What are the critical issues?}
+\input{05_BNL_criticalIssues}
+\input{05_FIT_criticalIssues}
+\input{05_INFN_criticalIssues}
+\input{05_SBU_criticalIssues}
+\input{05_TU_criticalIssues}
+\input{05_UVa_criticalIssues}
+\input{05_Yale_criticalIssues}
+%
+\subsection{Additional information}
+\input{06_BNL_additionalInfo}
+\input{06_FIT_additionalInfo}
+\input{06_INFN_additionalInfo}
+\input{06_SBU_additionalInfo}
+\input{06_TU_additionalInfo}
+\input{06_UVa_additionalInfo}
+\input{06_Yale_additionalInfo}
+
+\section{Manpower}
+\input{07_BNL_manpower}
+\input{07_FIT_manpower}
+\input{07_INFN_manpower}
+\input{07_SBU_manpower}
+\input{07_TU_manpower}
+\input{07_UVa_manpower}
+\input{07_Yale_manpower}
+
+\section{External Funding}
+\input{08_BNL_externalFunding}
+\input{08_FIT_externalFunding}
+\input{08_INFN_externalFunding}
+\input{08_SBU_externalFunding}
+\input{08_TU_externalFunding}
+\input{08_UVa_externalFunding}
+\input{08_Yale_externalFunding}
+
+\printbibliography
+
+%
+% mlp -- the easiest to extract (and then trim) all enrtries in a given bib file is e.g.
+%  grep @ BNL.bib | awk -F{ '{print $NF}'
+
+\appendix
+\section{List of all EIC publications from the eRD6 Consortium}
+%
+  \begin{refsection}
+    \renewcommand{\refname}{BNL publications:}
+    \nocite{8379440, 7497629, Woody:2015ola, 7431059, 6829463}
+    \printbibliography
+  \end{refsection}
+%  
+  \begin{refsection}
+    \renewcommand{\refname}{Florida Tech publications:}
+    \nocite{Hohlmann:2017sqj, Zhang:2017dqw, Zhang:2016vbk, Zhang:2015kxy, Zhang:2015pqa}
+    \printbibliography
+  \end{refsection}
+%  
+  \begin{refsection}
+    \renewcommand{\refname}{INFN publications:}
+     \nocite{AGARWALA2018-2, Agarwala:2018qdm}
+     \printbibliography    
+  \end{refsection}
+%
+  \begin{refsection}
+    \renewcommand{\refname}{SBU publications:}
+    \nocite{Blatnik:2015bka}
+    \printbibliography    
+  \end{refsection}
+%  
+  \begin{refsection}
+    \renewcommand{\refname}{TU publications:}
+    \nocite{Gnanvo:2014hpa, Gnanvo:2015xda}
+    \printbibliography
+  \end{refsection}
+  %
+  \begin{refsection}
+    \renewcommand{\refname}{UVa publications:}
+    \nocite{Gnanvo:2014hpa, Gnanvo:2015xda}
+    \printbibliography
+  \end{refsection}
+%
+  \begin{refsection}
+    \renewcommand{\refname}{Yale publications:}
+    \nocite{Aiola:2016rld}
+    \printbibliography    
+  \end{refsection}  
+%  
+\end{document}
